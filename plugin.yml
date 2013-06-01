@@ -1,0 +1,72 @@
+name: CityGuard
+main: com.forgewareinc.cityguard.CityGuard
+author: ForgeWare Inc.
+version: 2.0
+commands:
+    guard:        
+        usage: |
+           To choose a guard, right click him.
+           create (CreatureType) - Create a new guard.
+           sethorizontal/-vertical (size) - Set the watch size.
+           setdamage (damage) - Set the damage multiplier.
+           setinvincible (true/false) - Set if the guard is invincible.
+           settime (day/night/all) - Set the time the guard is active.
+           setname (name) - Name your guard.
+           move - Move the guard to the position you are looking at.
+           delete - Delete the guard.
+           debug - Toggle debug-mode.
+           adminhelp - Show admin commands.
+        create:
+            description: Create a new guard.
+            usage: Use /guard create (CreatureType)
+        sethorizontal:
+            description: Set the horizontal watch size for this guard.
+            usage: Use /guard sethorizontal (size)
+        setvertical:
+            description: Set the vertical watch size for this guard.
+            usage: Use /guard setvertical (size)
+        setdamage:
+            description: Set the damage multiplier for this guard.
+            usage: Use /guard setdamage (damage muliplier)
+        setinvincible:
+            description: Set if the guard is invincible.
+            usage: Use /guard create (true/false)
+        settime:
+            description: Set the time the guard is active.
+            usage: Use /guard create (day/night/all)
+        setname:
+            description: Name the guard.
+            usage: Use /guard create (name)
+        delete:
+            description: Remove the guard.
+            usage: Use /guard remove
+        move:
+            description: Move the guard to the position you are looking at.
+            usage: Use /guard move
+        saveconfig:
+            description: Save the config to file.
+            usage: Use /guard saveconfig
+        reloadconfig:
+            description: Reload the config from file.
+            usage: Use /guard reloadconfig
+        adminhelp:
+            description: Show help for admins.
+            usage: Use /guard adminhelp
+permissions:
+    cityguard:
+        description: Gives access to all CityGuard commands.
+        children:
+            cityguard.user: true
+            cityguard.admin: true
+    cityguard.user:
+        description: Gives access to all user commands
+        children:
+            cityguard.user.create: true
+            cityguard.user.modifyown: true
+    cityguard.admin:
+        description: Gives access to all admin commands and the adminhelp.
+        children:
+            cityguard.admin.modifyall: true
+            cityguard.admin.accessconfig: true
+            cityguard.admin.debug : true
+            
