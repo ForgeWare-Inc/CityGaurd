@@ -1,6 +1,7 @@
 name: CityGuard
 main: com.forgewareinc.cityguard.CityGuard
-author: ForgeWare Inc.
+author: ForgeWare
+website: http://forgewareinc.com/bukkit
 version: 2.0
 commands:
     guard:        
